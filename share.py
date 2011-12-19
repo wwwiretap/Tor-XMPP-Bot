@@ -18,7 +18,7 @@ def CreateClient():
   client = gdata.docs.client.DocsClient(source=TorXMPPBot.APP_NAME)
   client.http_client.debug = TorXMPPBot.DEBUG
   try:
-     client.ClientLogin('torbot@redteam.io', 'vum-v0d7xaju', client.source)
+     client.ClientLogin('torbot@redteam.io', sys.argv[2], client.source)
   except gdata.client.BadAuthentication:
     exit('Invalid user credentials given.')
   except gdata.client.Error:
